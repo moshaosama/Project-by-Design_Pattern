@@ -1,7 +1,9 @@
+import DataLoader from "./Shared/DataLoader";
+
 const Content = () => {
   return (
     <div>
-      <h1>Content</h1>
+      <DataLoader />
     </div>
   );
 };

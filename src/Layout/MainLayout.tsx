@@ -1,4 +1,6 @@
+import Content from "../Components/Content";
 import Header from "../Components/Header";
+import Sidebar from "../Components/Sidebar";
 import SwearContent from "../Components/SwearContent";
 
 const MainLayout = () => {
@@ -6,7 +8,8 @@ const MainLayout = () => {
     <>
       <Header />
       <SwearContent>
-        
+        <Sidebar />
+        <Content />
       </SwearContent>
     </>
   );

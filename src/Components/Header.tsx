@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="w-full bg-gray-400 flex justify-between p-5">
+    <div className="w-full bg-gray-400 flex justify-between p-5 z-50">
       <div>
         <a href="/" className="text-2xl font-bold ">
           FakeStroe

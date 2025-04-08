@@ -1,9 +1,12 @@
+import ProductIInfo from "./ProductIInfo";
 import DataLoader from "./Shared/DataLoader";
 
 const Content = () => {
   return (
     <div>
-      <DataLoader />
+      <DataLoader resourceName="product">
+        <ProductIInfo />
+      </DataLoader>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 interface ProductDataType {
-  product: {
+  product?: {
     id: number;
     title: string;
     price: number;
@@ -14,7 +14,7 @@ const ProductIInfo = ({ product }: ProductDataType) => {
       {product ? (
         product.map((product) => {
           return (
-            <div>
+            <div key={product.id}>
               <h1>{product.title}</h1>
             </div>
           );

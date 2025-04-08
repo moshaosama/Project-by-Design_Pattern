@@ -1,8 +1,12 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import ProductIInfo from "../ProductIInfo";
+import React, { ReactNode, useEffect, useState } from "react";
 
-const DataLoader = () => {
+interface DataLoaderProps {
+  children: ReactNode;
+  resourceName: string;
+}
+
+const DataLoader = ({ children, resourceName }: DataLoaderProps) => {
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
@@ -14,7 +18,14 @@ const DataLoader = () => {
     fetchData();
   }, []);
 
-  return <ProductIInfo product={productData} />;
+  return React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        [resourceName]: productData,
+      });
+    }
+    return child;
+  });
 };
 
 export default DataLoader;

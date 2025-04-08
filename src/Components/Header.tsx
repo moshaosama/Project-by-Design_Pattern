@@ -1,8 +1,10 @@
 const Header = () => {
   return (
-    <div className="w-full bg-gray-400 flex justify-between mx-14">
+    <div className="w-full bg-gray-400 flex justify-between p-5">
       <div>
-        <h1 className="text-2xl font-bold ">FakeStroe</h1>
+        <a href="/" className="text-2xl font-bold ">
+          FakeStroe
+        </a>
       </div>
       <div className="flex items-center gap-4">
         <a href="#profile">Profile</a>

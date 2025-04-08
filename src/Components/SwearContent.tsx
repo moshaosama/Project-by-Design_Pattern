@@ -1,15 +1,20 @@
+import { ReactNode } from "react";
 
 interface SwearContentProps {
-    
+  children: ReactNode;
 }
 
+const SwearContent = ({ children }: SwearContentProps) => {
+  const [Sidebar, Content]: any = children;
 
-const SwearContent = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <div className="flex">
+        <div>{Sidebar}</div>
+        <div>{Content}</div>
+      </div>
+    </>
+  );
+};
 
-export default SwearContent
+export default SwearContent;

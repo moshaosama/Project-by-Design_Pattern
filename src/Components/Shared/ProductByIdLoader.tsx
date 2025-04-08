@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
+import useFetch from "../../Hooks/useFetch";
 
 interface productDataType {
   id: number;
@@ -20,22 +21,9 @@ const ProductByIdLoader = ({
   productId,
   resourceName,
 }: ProductByIdLoaderProps) => {
-  const [productdata, setproductData] = useState<productDataType | {}>({});
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get(
-          `https://fakestoreapi.com/products/${productId}`
-        );
-        setproductData(data);
-      } catch (err) {
-        setError(err as string);
-      }
-    };
-    fetchData();
-  }, []);
+  const { error, productData } = useFetch(
+    `https://fakestoreapi.com/products/${productId}`
+  );
 
   return error ? (
     <p className="text-red-500">{error}</p>
@@ -43,7 +31,7 @@ const ProductByIdLoader = ({
     React.Children.map(children, (child) => {
       if (React.isValidElement(child)) {
         return React.cloneElement(child, {
-          [resourceName]: productdata,
+          [resourceName]: productData,
         });
       }
       return child;

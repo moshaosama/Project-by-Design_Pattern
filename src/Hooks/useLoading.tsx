@@ -5,7 +5,7 @@ const useLoading = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(!loading);
-    }, 1000);
+    }, 500);
   }, []);
 
   return { loading };

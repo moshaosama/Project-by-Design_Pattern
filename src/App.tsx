@@ -1,9 +1,9 @@
-import MainLayout from "./Layout/MainLayout";
+import RouterPages from "./Router/RouterPages";
 
 const App = () => {
   return (
     <>
-      <MainLayout />
+      <RouterPages />
     </>
   );
 };

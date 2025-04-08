@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
+import useFetch from "../../Hooks/useFetch";
 
-interface productDataType {
+export interface productDataType {
   id: number;
   title: string;
   price: number;
@@ -9,7 +10,7 @@ interface productDataType {
   image: string;
 }
 
-interface AllProductLoaderProps {
+export interface AllProductLoaderProps {
   children: ReactNode;
   resourceName: string;
 }
@@ -18,22 +19,7 @@ const AllProductLoader = ({
   children,
   resourceName,
 }: AllProductLoaderProps) => {
-  const [productData, setProductData] = useState<productDataType[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get("https://fakestoreapi.com/products");
-        setProductData(data);
-      } catch (err) {
-        setError(err as string);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+  const { error, productData } = useFetch("https://fakestoreapi.com/products");
   return error ? (
     <p className="text-red-500 text-xl font-bold">{error}</p>
   ) : (

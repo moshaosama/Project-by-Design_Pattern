@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import useFetch from "../../Hooks/useFetch";
 
 export interface productDataType {

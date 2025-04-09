@@ -1,4 +1,4 @@
-import ProductsInfo from "../Components/ProductsInfo";
+import ProductsInfo from "../Components/DataInfo/ProductsInfo";
 import AllProductLoader from "../Components/Shared/AllProductLoader";
 import WithLoading from "../Utils/WithLoading";
 import useLoading from "../Hooks/useLoading";

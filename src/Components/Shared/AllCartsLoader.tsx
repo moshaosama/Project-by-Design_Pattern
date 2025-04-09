@@ -1,13 +1,5 @@
-import React, { ReactNode, useEffect, useState } from "react";
-
-interface AllCartsLoaderState {
-  date: string;
-  products: {
-    productId: number;
-    quantity: number;
-  }[];
-}
-[];
+import React, { ReactNode } from "react";
+import useFetch from "../../Hooks/useFetch";
 
 interface AllCartsLoaderProps {
   children: ReactNode;
@@ -15,25 +7,19 @@ interface AllCartsLoaderProps {
 }
 
 const AllCartsLoader = ({ children, resourceName }: AllCartsLoaderProps) => {
-  const [cartData, setCartData] = useState<AllCartsLoaderState | []>([]);
+  const { productData, error } = useFetch("https://fakestoreapi.com/carts");
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/carts")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setCartData(data);
-      });
-  }, []);
-
-  return React.Children.map(children, (child) => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, {
-        [resourceName]: cartData,
-      });
-    }
-  });
+  return error ? (
+    <h1 className="text-red-500">{error}</h1>
+  ) : (
+    React.Children.map(children, (child) => {
+      if (React.isValidElement(child)) {
+        return React.cloneElement(child, {
+          [resourceName]: productData,
+        });
+      }
+    })
+  );
 };
 
 export default AllCartsLoader;

@@ -1,4 +1,4 @@
-import CartsInfo from "../Components/CartsInfo";
+import CartsInfo from "../Components/DataInfo/CartsInfo";
 import AllCartsLoader from "../Components/Shared/AllCartsLoader";
 import useLoading from "../Hooks/useLoading";
 import WithLoading from "../Utils/WithLoading";

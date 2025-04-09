@@ -1,14 +1,7 @@
-import axios from "axios";
-import React, { ReactNode, useEffect, useState } from "react";
+
+import React, { ReactNode } from "react";
 import useFetch from "../../Hooks/useFetch";
 
-interface productDataType {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  image: string;
-}
 
 interface ProductByIdLoaderProps {
   children: ReactNode;

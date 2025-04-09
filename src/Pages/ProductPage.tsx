@@ -1,5 +1,5 @@
 import ProductByIdLoader from "../Components/Shared/ProductByIdLoader";
-import ProductbyidInfo from "../Components/ProductbyidInfo";
+import ProductbyidInfo from "../Components/DataInfo/ProductbyidInfo";
 import { useParams } from "react-router";
 import useLoading from "../Hooks/useLoading";
 import WithLoading from "../Utils/WithLoading";

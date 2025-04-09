@@ -7,7 +7,7 @@ interface AllCartsLoaderProps {
 }
 
 const AllCartsLoader = ({ children, resourceName }: AllCartsLoaderProps) => {
-  const { productData, error } = useFetch("https://fakestoreapi.com/carts");
+  const { Data: cartData, error } = useFetch("https://fakestoreapi.com/carts");
 
   return error ? (
     <h1 className="text-red-500">{error}</h1>
@@ -15,7 +15,7 @@ const AllCartsLoader = ({ children, resourceName }: AllCartsLoaderProps) => {
     React.Children.map(children, (child) => {
       if (React.isValidElement(child)) {
         return React.cloneElement(child, {
-          [resourceName]: productData,
+          [resourceName]: cartData,
         });
       }
     })

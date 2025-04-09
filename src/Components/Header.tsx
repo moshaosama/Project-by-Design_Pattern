@@ -1,5 +1,6 @@
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 import useTheme from "../Hooks/useTheme";
+import useChangebyTheme from "../Hooks/useChangebyTheme";
 
 const Header = () => {
   const { handleClick } = useTheme();
@@ -14,7 +15,7 @@ const Header = () => {
         <a href="#profile">Profile</a>
         <a href="#Logout">Logout</a>
         <i className="cursor-pointer" onClick={handleClick}>
-          <MdDarkMode />
+          {useChangebyTheme(<MdLightMode />, <MdDarkMode />)}
         </i>
       </div>
     </div>

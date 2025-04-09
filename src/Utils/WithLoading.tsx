@@ -5,9 +5,7 @@ interface WithLoadingProps {
 const WithLoading = (Component: React.ComponentType<any>) => {
   return ({ loading, ...props }: WithLoadingProps) => {
     if (loading) {
-      return (
-        <h1 className="text-5xl font-extrabold text-center">Loading...</h1>
-      );
+      return <h1 className="text-2xl font-bold">Loading...</h1>;
     } else {
       return <Component {...props} />;
     }

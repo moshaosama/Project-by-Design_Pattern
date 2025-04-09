@@ -7,6 +7,7 @@ const useTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", JSON.stringify(newTheme));
+    window.location.reload();
   };
 
   useEffect(() => {

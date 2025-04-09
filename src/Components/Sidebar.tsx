@@ -6,8 +6,8 @@ const Sidebar = () => {
           Home
         </a>
 
-        <a href="/about" className="text-xl font-semibold ">
-          About
+        <a href="/carts" className="text-xl font-semibold ">
+          Carts
         </a>
 
         <a href="/content" className="text-xl font-semibold ">

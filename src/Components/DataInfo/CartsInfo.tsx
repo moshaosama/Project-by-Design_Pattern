@@ -26,7 +26,7 @@ const CartsInfo = ({ carts }: CartsInfoProps) => {
                 </div>
                 <div>
                   <Link to={`/product/${product.productId}`}>
-                    <button className="bg-teal-400 font-bold px-5 rounded-xl text-white py-2">
+                    <button className="bg-teal-400 font-bold px-5 rounded-xl text-white py-2 cursor-pointer hover:bg-teal-300 transition-all duration-200">
                       View
                     </button>
                   </Link>

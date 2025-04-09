@@ -17,11 +17,8 @@ const ProductsInfo = ({ product }: ProductDataType) => {
         <div className="grid grid-cols-5 max-sm:grid-cols-1 justify-between items-center overflow-y-scroll h-[86.8vh]">
           {product.map((product) => {
             return (
-              <Link to={`product/${product.id}`}>
-                <div
-                  key={product.id}
-                  className="border-[2px] m-4 max-sm:m-0 shadow-xl hover:bg-gray-200 hover:rounded-xl transition-all duration-500 cursor-pointer  h-96 border-gray-300 p-10"
-                >
+              <Link to={`product/${product.id}`} key={product.id}>
+                <div className="border-[2px] m-4 max-sm:m-0 shadow-xl hover:bg-gray-200 hover:rounded-xl transition-all duration-500 cursor-pointer  h-96 border-gray-300 p-10">
                   <div className="flex justify-center overflow-hidden">
                     <img
                       src={product.image}

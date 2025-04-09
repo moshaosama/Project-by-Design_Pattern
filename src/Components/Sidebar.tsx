@@ -1,6 +1,6 @@
 const Sidebar = () => {
   return (
-    <div className="bg-gray-700 h-[86.8vh] p-10">
+    <div className=" h-[86.8vh] p-10">
       <div className="flex flex-col gap-10">
         <a href="/" className="text-xl font-semibold ">
           Home

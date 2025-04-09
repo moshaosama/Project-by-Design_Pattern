@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 import { productDataType } from "../Components/Shared/AllProductLoader";
 
 const useFetch = (url: string) => {
-  const [productData, setProductData] = useState<productDataType[]>([]);
+  const [Data, setData] = useState<productDataType[]>([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(url);
-        setProductData(data);
+        setData(data);
       } catch (err) {
         setError(err as string);
       }
@@ -19,7 +19,7 @@ const useFetch = (url: string) => {
     fetchData();
   }, []);
 
-  return { productData, error };
+  return { Data, error };
 };
 
 export default useFetch;

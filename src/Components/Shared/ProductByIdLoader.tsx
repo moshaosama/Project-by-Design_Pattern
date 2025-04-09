@@ -1,7 +1,5 @@
-
 import React, { ReactNode } from "react";
 import useFetch from "../../Hooks/useFetch";
-
 
 interface ProductByIdLoaderProps {
   children: ReactNode;
@@ -14,7 +12,7 @@ const ProductByIdLoader = ({
   productId,
   resourceName,
 }: ProductByIdLoaderProps) => {
-  const { error, productData } = useFetch(
+  const { error, Data: productData } = useFetch(
     `https://fakestoreapi.com/products/${productId}`
   );
 

@@ -18,7 +18,9 @@ const AllProductLoader = ({
   children,
   resourceName,
 }: AllProductLoaderProps) => {
-  const { error, productData } = useFetch("https://fakestoreapi.com/products");
+  const { error, Data: productData } = useFetch(
+    "https://fakestoreapi.com/products"
+  );
   return error ? (
     <p className="text-red-500 text-xl font-bold">{error}</p>
   ) : (

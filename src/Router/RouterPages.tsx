@@ -4,6 +4,7 @@ import MainLayout from "../Layout/MainLayout";
 import Content from "../Pages/Content";
 import ProductPage from "../Pages/ProductPage";
 import CartPage from "../Pages/CartPage";
+import CommentPage from "../Pages/CommentPage";
 
 const RouterPages = () => {
   const Router = createBrowserRouter([
@@ -23,6 +24,10 @@ const RouterPages = () => {
         {
           path: "carts",
           element: <CartPage />,
+        },
+        {
+          path: "comments",
+          element: <CommentPage />,
         },
       ],
     },

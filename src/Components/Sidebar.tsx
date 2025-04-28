@@ -10,8 +10,8 @@ const Sidebar = () => {
           Carts
         </a>
 
-        <a href="/content" className="text-xl font-semibold ">
-          Content
+        <a href="/comments" className="text-xl font-semibold ">
+          Comments
         </a>
 
         <a href="/logout" className="text-xl font-semibold ">
